@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Hello</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<form method="post" action="/" th:object="${helloForm}">
+		<span th:if="${#fields.hasErrors('notBlankField')}" th:errors="*{notBlankField}" style="color: red"></span><br /> 
+		NotBlankField：<input type="text" name="notBlankField" th:field="*{notBlankField}" /><br /> 
+		<span th:if="${#fields.hasErrors('notEmptyField')}" th:errors="*{notEmptyField}" style="color: red"></span><br /> 
+		NotEmptyField：<input type="text" name="notEmptyField" th:field="*{notEmptyField}" /><br /> 
+		<span th:if="${#fields.hasErrors('notNullField')}" th:errors="*{notNullField}" style="color: red"></span><br /> 
+		NotNullField：<input type="text" name="notNullField" th:field="*{notNullField}" /><br /><br />
+		<input type="submit" value="Submit" />
+	</form>
+</body>
+</html>
